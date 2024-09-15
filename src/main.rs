@@ -1,9 +1,28 @@
+struct User {
+    active: bool,
+    username: String,
+    email: String,
+    sign_in_count: u64,
+}
+
+
 fn main() {
     println!("Hello, world!");
     println!("{}", is_even(3));
     println!("{}", fib(5));
     println!("{}", prime(6));
     println!("{}", factorial(5));
+    println!("Length of string is : {}", string_length("abcdefghijklmnop"));
+
+
+    //struct
+    let user1 = User {
+        active: true,
+        username: String::from("user1"),
+        email: String::from("user1@example.com"),
+        sign_in_count: 1,
+    };
+    print!("User 1 details \n\tSubscription : {} \n\tUsername : {} \n\tEmail : {} \n\tCount : {}", user1.active, user1.username, user1.email, user1.sign_in_count);
 }
 
 // code for odd even
@@ -44,4 +63,15 @@ fn factorial(num: i32) -> i32 {
         return 1;
     }
     return num * factorial(num-1);
+}
+
+// a function that string as an input and return its length
+fn string_length(s: &str) -> i32 {
+    let mut count = 0; 
+    for _ in s.chars() { 
+        count += 1; 
+    }
+
+    //implicit return
+    count
 }
