@@ -3,6 +3,7 @@ fn main() {
     println!("{}", is_even(3));
     println!("{}", fib(5));
     println!("{}", prime(6));
+    println!("{}", factorial(5));
 }
 
 // code for odd even
@@ -35,4 +36,12 @@ fn prime(num: i32) -> bool {
         }
     }
     return flag;
+}
+
+//factorial 
+fn factorial(num: i32) -> i32 {
+    if num == 0 || num == 1{
+        return 1;
+    }
+    return num * factorial(num-1);
 }
