@@ -19,6 +19,20 @@ impl Rectangle {
     }
 }
 
+enum Shapes{
+    Circle(f64),
+    Square(f64),
+    Rectangle(f64,f64),
+}
+
+fn calculate_area(shape: Shapes) -> f64 {
+    match shape{
+        Shapes::Circle(r) => 3.14159*r*r,
+        Shapes::Square(s) => s*s,
+        Shapes::Rectangle(w,h) => w*h,
+    }
+}
+
 
 fn main() {
     println!("Hello, world!");
@@ -43,9 +57,16 @@ fn main() {
         height: 35,
     };
 
-
     println!("Area of rectangle is {} sq units", rect.area());
     println!("Perimeter of rectangle is {} units", rect.perimeter());
+
+    //Enum
+    let circle = Shapes::Circle(5.0);
+    let square = Shapes::Square(4.0);
+    let rectangle = Shapes::Rectangle(3.0, 6.0);
+    println!("Area of Circle: {}", calculate_area(circle));
+    println!("Area of Square: {}", calculate_area(square));
+    println!("Area of Rectangle: {}", calculate_area(rectangle));
 }
 
 // code for odd even
