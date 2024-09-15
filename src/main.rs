@@ -5,6 +5,20 @@ struct User {
     sign_in_count: u64,
 }
 
+struct Rectangle {
+    width: i32,
+    height: i32,
+}
+
+impl Rectangle {
+    fn area(&self) -> i32 {
+        self.width * self.height
+    }
+    fn perimeter(&self) -> i32 {
+        2 * (self.width + self.height) 
+    }
+}
+
 
 fn main() {
     println!("Hello, world!");
@@ -22,7 +36,16 @@ fn main() {
         email: String::from("user1@example.com"),
         sign_in_count: 1,
     };
-    print!("User 1 details \n\tSubscription : {} \n\tUsername : {} \n\tEmail : {} \n\tCount : {}", user1.active, user1.username, user1.email, user1.sign_in_count);
+    println!("User 1 details \n\tSubscription : {} \n\tUsername : {} \n\tEmail : {} \n\tCount : {}", user1.active, user1.username, user1.email, user1.sign_in_count);
+
+    let rect = Rectangle{
+        width: 25,
+        height: 35,
+    };
+
+
+    println!("Area of rectangle is {} sq units", rect.area());
+    println!("Perimeter of rectangle is {} units", rect.perimeter());
 }
 
 // code for odd even
