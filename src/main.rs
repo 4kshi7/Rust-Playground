@@ -1,3 +1,5 @@
+use chrono::{Local, Utc};
+
 struct User {
     active: bool,
     username: String,
@@ -74,6 +76,13 @@ fn main() {
         Some(val) => println!("index: {}", val),
         None => println!("a not found"),
     }
+
+    //Package Mgmt
+    let now = Utc::now();
+    println!("Date & Time : {}", now);
+
+    let formatted = now.format("%Y-%m-%d %H:%M:%S");
+    println!("Formatted Date & Time: {}", formatted);
 }
 
 // code for odd even
