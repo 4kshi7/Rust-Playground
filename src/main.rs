@@ -67,6 +67,13 @@ fn main() {
     println!("Area of Circle: {}", calculate_area(circle));
     println!("Area of Square: {}", calculate_area(square));
     println!("Area of Rectangle: {}", calculate_area(rectangle));
+
+    //Some & None
+    let index = first_a(String::from("blackberry"));
+    match index {
+        Some(val) => println!("index: {}", val),
+        None => println!("a not found"),
+    }
 }
 
 // code for odd even
@@ -118,4 +125,14 @@ fn string_length(s: &str) -> i32 {
 
     //implicit return
     count
+}
+
+// a function that returns the index of first "a" in a string
+fn first_a(s: String) -> Option<i32> {
+    for (i,char) in s.chars().enumerate() {
+        if char == 'a'{
+            return Some(i as i32);
+        }
+    }
+    return None;
 }
